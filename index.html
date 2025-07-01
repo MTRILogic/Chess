@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Online</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chess Online</h1>
+        
+        <div class="game-container">
+            <div class="board-container">
+                <div id="game-status" class="game-status">White to move</div>
+                <div id="chessboard" class="chessboard"></div>
+                <div class="captured-pieces">
+                    <div class="captured white-captured" id="white-captured"></div>
+                    <div class="captured black-captured" id="black-captured"></div>
+                </div>
+            </div>
+            
+            <div class="controls-container">
+                <div class="game-info">
+                    <div id="move-history" class="move-history">
+                        <h3>Move History</h3>
+                        <div id="moves-list" class="moves-list"></div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="new-game-btn" class="control-btn"><i class="fas fa-plus"></i> New Game</button>
+                    <button id="undo-btn" class="control-btn"><i class="fas fa-undo"></i> Undo</button>
+                    <button id="flip-board-btn" class="control-btn"><i class="fas fa-retweet"></i> Flip Board</button>
+                    <button id="save-game-btn" class="control-btn"><i class="fas fa-save"></i> Save Game</button>
+                    <button id="load-game-btn" class="control-btn"><i class="fas fa-folder-open"></i> Load Game</button>
+                </div>
+                <div class="game-modes">
+                    <h3>Game Mode</h3>
+                    <div class="mode-selection">
+                        <button id="two-player-btn" class="mode-btn active">Two Players</button>
+                        <button id="ai-mode-btn" class="mode-btn">Play vs AI</button>
+                    </div>
+                    <div id="ai-options" class="ai-options hidden">
+                        <h4>AI Difficulty</h4>
+                        <div class="difficulty-options">
+                            <button data-level="1" class="difficulty-btn active">Easy</button>
+                            <button data-level="2" class="difficulty-btn">Medium</button>
+                            <button data-level="3" class="difficulty-btn">Hard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promotion modal -->
+        <div id="promotion-modal" class="modal">
+            <div class="modal-content">
+                <h3>Choose Promotion</h3>
+                <div class="promotion-pieces">
+                    <div class="promotion-piece" data-piece="q">Queen</div>
+                    <div class="promotion-piece" data-piece="r">Rook</div>
+                    <div class="promotion-piece" data-piece="n">Knight</div>
+                    <div class="promotion-piece" data-piece="b">Bishop</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chess engine modules -->
+    <script type="module" src="./js/constants.js"></script>
+    <script type="module" src="./js/pieces.js"></script>
+    <script type="module" src="./js/board.js"></script>
+    <script type="module" src="./js/moves.js"></script>
+    <script type="module" src="./js/ai.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
